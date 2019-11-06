@@ -5,14 +5,14 @@ Created on Sun Sep  2 10:43:20 2018
 @author: Sajad
 Zacks' Ranking scrapping
 """
-workingdirectory = 'D:/Sajad/advance get/zacks'
+workingdirectory = 'define your working directory here this is the place where the file will be saved'
 import pandas as pd
 import urllib.request
 import datetime as dt
 import os
 os.chdir(workingdirectory)
 
-#  
+# This funtion scrap each Symbol page and extract the Zacks Rank 
 def Zacks_Rank(Symbol):
   
     # Wait for 2 seconds
@@ -38,7 +38,8 @@ def Zacks_Rank(Symbol):
        # peyda kon ;; faghat index harf aval ro retrun mikond
        if(data_str.find(Rank) != -1):
            return Rank #data_str[res:res+len(Rank)]# 
-        
+ 
+# this function put each ticker in its rank list and return the result
 def Market_Rank(Symbols):
     Strong_Buy=[]
     Buy=[]
@@ -105,6 +106,8 @@ SP500=["A","AAL","AAP","AAPL","ABBV","ABC","ABT","ACN","ADBE","ADI","ADM","ADP",
         "WRK","WU","WY","WYN","WYNN","XEC","XEL","XL","XLNX","XOM","XRAY","XRX",
         "XYL","YUM","ZBH","ZION","ZTS"]
 condition= True
+
+# Here we print the result for each rank
 if(condition == True):
     result = Market_Rank(SP500)
     print('Strong Buy are:\n')
